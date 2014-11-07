@@ -1,0 +1,245 @@
+
+/*------------------------------------*\
+
+    PRINT STYLES
+    Andre Firchow - firchow.net
+
+\*------------------------------------*/
+
+
+
+
+
+/**
+ * Prepare utility class for other media
+ */
+
+
+.print-only {
+	display: none;
+}
+
+
+
+
+
+/**
+ * Here comes the print styles
+ */
+
+
+@media print {
+
+	*,
+	*:before,
+	*:after {
+		color: #000 !important; /* Black prints faster: h5bp.com/s */
+		background: transparent !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+		font-family: Georgia, Times, "Times New Roman", serif;
+	}
+
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		max-width: inherit !important;
+		width: 98% !important;
+		margin: 0 auto;
+	}
+
+	@page {
+		size: auto;
+		margin: 1.2cm 0.75cm;
+	}
+
+
+
+
+
+/**
+ * Hide page elements which are irrelevant for print.
+ * Please extend these for your needs...
+ */
+
+
+	nav,
+	aside,
+	video {
+		display: none;
+	}
+
+
+
+
+
+/**
+ * Layout, Typo and Break behaviour styles
+ */
+
+
+	ul,
+	ol,
+	img,
+	table,
+	pre,
+	blockquote {
+	   page-break-inside: avoid;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+	   page-break-after: avoid;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3; /* 3 consecutive lines at end of page */
+		widows: 2; /* 2 lines at start of new page */
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+	}
+
+	img {
+	   max-width: 100% !important;
+	}
+
+
+
+
+
+/**
+ * Ensure that all content-areas uses the full page width.
+ * Please extend these for your needs...
+ */
+
+
+	.content {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		float: none;
+	}
+
+
+
+
+
+/**
+ * Optimize tables for print
+ */
+
+
+	table {
+		border-collapse: collapse;
+	}
+
+	thead {
+		display: table-header-group; /* h5bp.com/t */
+	}
+
+	table,
+	td,
+	th {
+		border: 1px solid #999;
+	}
+
+	td,
+	th {
+		padding: 1%;
+	}
+
+	th {
+		font-weight: bold;
+	}
+
+
+
+
+
+/**
+ * Extend anchors to show detailed information (href) on printout
+ *
+ * There is a nice alternative available which collects all
+ * links of a page and show them as a footnote. Requires JavaScript.
+ * http://alistapart.com/article/improvingprint
+ */
+
+	a,
+	a:visited {
+		color: #06c !important;
+	}
+
+	a[href] {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+	    content: " (" attr(href) ") ";
+	    word-wrap: break-word;
+	    font-style: italic;
+	    font-size: .75em;
+	    color: #06c !important;
+	}
+	 
+	a[href^="#"]:after,
+	a[href^="javascript"]:after {
+	    content: "";
+	}
+
+
+
+
+
+/**
+ * Extend abbr to show detailed information from the title-attribute on printout
+ */
+
+
+	abbr {
+		border: none;
+	}
+
+	abbr[title]:after {
+	    content: " (" attr(title) ") ";
+	    font-style: italic;
+	    font-size: .75em;
+	}
+
+
+
+
+
+/**
+ * Print utility classes
+ */
+
+
+	.print-only {
+		display: block !important;
+	}
+
+	.hide-on-print {
+		display: none !important;
+	}
+
+	.page-break-before {
+		page-break-before: always;
+	}
+
+	.page-break-after {
+		page-break-after: always;
+	}
+
+
+}
