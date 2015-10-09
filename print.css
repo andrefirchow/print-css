@@ -70,7 +70,7 @@
 	nav,
 	aside,
 	video {
-		display: none;
+		display: none !important;
 	}
 
 
