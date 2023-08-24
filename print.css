@@ -87,7 +87,8 @@
 	img,
 	table,
 	pre,
-	blockquote {
+	blockquote,
+	figure {
 	   page-break-inside: avoid;
 	}
 
